@@ -12,6 +12,7 @@ export const links = [
     {
       name: "Movies",
       path: "/movies",
+      className: "movie_path",
       icon: <BiCameraMovie/>,
     },
     {
