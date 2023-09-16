@@ -1,0 +1,80 @@
+.movie_details {
+  display: grid;
+  grid-template-columns: 12.99% 83%;
+  margin: auto;
+}
+
+.aside_movie_links {
+  border: 1px solid #747474;
+  border-top-right-radius: 2.5em;
+  border-bottom-right-radius: 2.5rem;
+  /* padding: 2rem; */
+}
+
+.logo_movie_box {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  width: 90%;
+  padding-left: 1rem;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nav__link {
+  /* background-color: rgba(190, 18, 60, 0.1); */
+  margin-bottom: 1rem;
+  color: #be123c;
+  padding: 1.5rem 0 1.5rem 1rem;
+  /* border-right: 4px solid #BE123C; */
+}
+
+.nav_path {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.06rem;
+}
+
+.quiz {
+  padding: 0.1rem 1.4rem;
+}
+
+.quiz_content {
+  margin-top: 2rem;
+  background-color: rgba(190, 18, 60, 0.1);
+  border: 2px solid #be123c;
+  border-radius: 1rem;
+  padding: 1.9rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz_content p {
+  font-size: 0.9rem;
+}
+
+.quiz_content small {
+  font-size: 0.6rem;
+}
+
+.start_btn {
+  background-color: rgba(190, 18, 60, 0.1);
+  color: #be123c;
+  padding: 0.3rem 0.9rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+
+.logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
