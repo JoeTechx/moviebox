@@ -37,7 +37,7 @@ const Card = ({ movie }) => {
                 {`USA ${movie?movie.release_date: ""}`}
               </small>
               <Link
-                to={`./movie/${movie.id}`}
+                to={`/movie/${movie.id}`}
                 className="movie_title"
                 data-testid="movie-title"
               >

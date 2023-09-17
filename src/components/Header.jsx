@@ -17,7 +17,7 @@ const Header = () => {
   const [movies, setMovies] = useState([]);
   const getMovie = () => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=8561ffc4984ec7968846984aa7dc544c"
+      "https://api.themoviedb.org/3/discover/movie?api_key=812483ddbe4ac24230b9260aa76f4a30"
     )
       .then((res) => res.json())
       .then((json) => setMovies(json.results));
@@ -29,7 +29,7 @@ const Header = () => {
   console.log(movies);
 
   const API_SEARCH_KEY =
-    "https://api.themoviedb.org/3/search/movie?api_key=8561ffc4984ec7968846984aa7dc544c&query=";
+    "https://api.themoviedb.org/3/search/movie?api_key=812483ddbe4ac24230b9260aa76f4a30&query=";
 
   const [term, setTerm] = useState("");
   const handleSearch = (e) => {

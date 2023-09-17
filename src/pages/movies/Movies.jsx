@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
-import axios from 'axios';
+// import axios from "axios";
 import Logo from "../../Assets/Logo (1).png";
 // import Trailer from "../../Assets/Rectangle 29.png";
 import Film from "../../Assets/Group 52.png";
@@ -15,22 +15,27 @@ import { AiOutlineUnorderedList } from "react-icons/ai";
 import { IoTicketSharp } from "react-icons/io5";
 import "./Movies.css";
 
-const Movie = () => {
-  const [currentMovieDetail, setMovies] = useState();
-  const { id } = useParams();
+const Movies = () => {
+  const [movie, setMovies] = useState([]);
+  const id = useParams();
 
-  const getMovie = () => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=8561ffc4984ec7968846984aa7dc544c`
-    )
-      .then((res) => res.json())
-      .then((json) => setMovies(json.results));
-  };
   useEffect(() => {
-    getMovie();
+    getData();
+    window.scrollTo(0, 0);
   }, []);
 
-  console.log(currentMovieDetail);
+  const getData = () => {
+    fetch(
+
+      `https://api.themoviedb.org/3/movie/${id}?api_key=812483ddbe4ac24230b9260aa76f4a30&language=en-US`
+      // 'https://api.themoviedb.org/3/movie/{movie.id}?api_key=8561ffc4984ec7968846984aa7dc544clanguage=en-US'
+      // `https://api.themoviedb.org/3/movie//385687?api_key=8561ffc4984ec7968846984aa7dc544c&language=en-US`
+    )
+      .then((res) => res.json())
+      .then((data) => setMovies(data));
+  };
+
+  console.log(movie);
 
   return (
     <section className="movie_details">
@@ -69,9 +74,7 @@ const Movie = () => {
         <div className="top_container">
           <div className="trailer_video">
             <img
-              src={`https://image.tmdb.org/t/p/original${
-                currentMovieDetail ? currentMovieDetail.poster_path : ""
-              }`}
+              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
               alt="Trailer"
               className="trailer_img"
             />
@@ -88,27 +91,22 @@ const Movie = () => {
             <div className="movie_title-date-genre">
               <div className="title_date">
                 <p className="title" data-testid="movie-title">
-                  Top Gun:{" "}
-                  {currentMovieDetail ? currentMovieDetail.original_title : ""}
+                  Top Gun: {movie.original_title}
                 </p>
                 <BsDot />
                 <p className="released_date" data-testid="movie-release-date">
-                  {currentMovieDetail
-                    ? "Release date: " + currentMovieDetail.release_date
-                    : ""}
+                  {movie.release_date}
                 </p>
                 <BsDot />
                 <p className="PG">PG-13</p>
                 <BsDot />
                 <p className="released_runtime" data-testid="movie-runtime">
-                  {currentMovieDetail
-                    ? currentMovieDetail.runtime + " mins"
-                    : ""}
+                  {movie.runtime + " mins"}
                 </p>
               </div>
               <div className="genre_btn">
-                {currentMovieDetail && currentMovieDetail.genres
-                  ? currentMovieDetail.genres.map((genre) => (
+                {movie && movie.genres
+                  ? movie.genres.map((genre) => (
                       <button className="start_btn action_btn" id={genre.id}>
                         {genre.name}
                       </button>
@@ -118,9 +116,7 @@ const Movie = () => {
             </div>
             <div className="movie_rating">
               <BiSolidStar />
-              <span>
-                {currentMovieDetail ? currentMovieDetail.vote_average : ""}
-              </span>
+              <span>{movie.vote_average}</span>
               <p>|</p>
               <p>350K</p>
             </div>
@@ -129,7 +125,7 @@ const Movie = () => {
             <div className="movie_detail-left">
               <div className="movie_detail-content">
                 <p className="movie_overview" data-testid="movie-overview">
-                  {currentMovieDetail ? currentMovieDetail.overview : ""}
+                  {movie.overview}
                 </p>
                 <p className="movie_director">
                   Director: <span>Joseph Kosinski</span>
@@ -173,4 +169,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default Movies;
