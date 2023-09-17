@@ -33,7 +33,7 @@ const Card = ({ movie }) => {
               data-testid="movie-poster"
             />
             <div className="movie_dt">
-              <small data-testid="movie-release-data">
+              <small data-testid="movie-release-date">
                 {`USA ${movie?movie.release_date: ""}`}
               </small>
               <Link
