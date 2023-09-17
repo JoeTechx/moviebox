@@ -16,25 +16,23 @@ import { IoTicketSharp } from "react-icons/io5";
 import "./Movies.css";
 
 const Movies = () => {
-  const [movie, setMovies] = useState([]);
+  const { movie, setMovie } = useState([]);
   const id = useParams();
+
+  const getData = () => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=812483ddbe4ac24230b9260aa76f4a30&language=en-US`
+    )
+      .then((res) => res.json())
+      .then((data) => setMovie(data));
+    console.log(movie);
+  };
+  console.log({ id });
 
   useEffect(() => {
     getData();
     window.scrollTo(0, 0);
   }, []);
-
-  const getData = () => {
-    fetch(
-
-      `https://api.themoviedb.org/3/movie/${id}?api_key=812483ddbe4ac24230b9260aa76f4a30&language=en-US`
-      // 'https://api.themoviedb.org/3/movie/{movie.id}?api_key=8561ffc4984ec7968846984aa7dc544clanguage=en-US'
-      // `https://api.themoviedb.org/3/movie//385687?api_key=8561ffc4984ec7968846984aa7dc544c&language=en-US`
-    )
-    .then((res) => res.json())
-    .then((data) => setMovies(data))
-     console.log(movie);
-  };
 
   return (
     <section className="movie_details">
@@ -73,7 +71,7 @@ const Movies = () => {
         <div className="top_container">
           <div className="trailer_video">
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
               alt="Trailer"
               className="trailer_img"
             />
@@ -90,17 +88,17 @@ const Movies = () => {
             <div className="movie_title-date-genre">
               <div className="title_date">
                 <p className="title" data-testid="movie-title">
-                  {movie.title}
+                  {movie?.title}
                 </p>
                 <BsDot />
                 <p className="released_date" data-testid="movie-release-date">
-                  {movie.release_date}
+                  {movie?.release_date}
                 </p>
                 <BsDot />
                 <p className="PG">PG-13</p>
                 <BsDot />
                 <p className="released_runtime" data-testid="movie-runtime">
-                  {movie.runtime + " mins"}
+                  {movie?.runtime + " mins"}
                 </p>
               </div>
               <div className="genre_btn">
@@ -115,7 +113,7 @@ const Movies = () => {
             </div>
             <div className="movie_rating">
               <BiSolidStar />
-              <span>{movie.vote_average}</span>
+              <span>{movie?.vote_average}</span>
               <p>|</p>
               <p>350K</p>
             </div>
@@ -124,7 +122,7 @@ const Movies = () => {
             <div className="movie_detail-left">
               <div className="movie_detail-content">
                 <p className="movie_overview" data-testid="movie-overview">
-                  {movie.overview}
+                  {movie?.overview}
                 </p>
                 <p className="movie_director">
                   Director: <span>Joseph Kosinski</span>
