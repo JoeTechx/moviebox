@@ -31,11 +31,10 @@ const Movies = () => {
       // 'https://api.themoviedb.org/3/movie/{movie.id}?api_key=8561ffc4984ec7968846984aa7dc544clanguage=en-US'
       // `https://api.themoviedb.org/3/movie//385687?api_key=8561ffc4984ec7968846984aa7dc544c&language=en-US`
     )
-      .then((res) => res.json())
-      .then((data) => setMovies(data));
+    .then((res) => res.json())
+    .then((data) => setMovies(data))
+     console.log(movie);
   };
-
-  console.log(movie);
 
   return (
     <section className="movie_details">
@@ -74,7 +73,7 @@ const Movies = () => {
         <div className="top_container">
           <div className="trailer_video">
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt="Trailer"
               className="trailer_img"
             />
