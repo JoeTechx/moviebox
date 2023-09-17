@@ -17,7 +17,7 @@ const Header = () => {
   const [movies, setMovies] = useState([]);
   const getMovie = () => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=812483ddbe4ac24230b9260aa76f4a30"
+      "https://api.themoviedb.org/3/movie/top_rated?api_key=812483ddbe4ac24230b9260aa76f4a30"
     )
       .then((res) => res.json())
       .then((json) => setMovies(json.results));

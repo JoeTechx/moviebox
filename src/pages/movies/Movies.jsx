@@ -90,7 +90,7 @@ const Movies = () => {
             <div className="movie_title-date-genre">
               <div className="title_date">
                 <p className="title" data-testid="movie-title">
-                  Top Gun: {movie.original_title}
+                  {movie.title}
                 </p>
                 <BsDot />
                 <p className="released_date" data-testid="movie-release-date">
