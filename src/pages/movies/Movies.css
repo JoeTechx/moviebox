@@ -190,14 +190,16 @@ p.movie_overview {
   margin: 0 0 2rem;
 }
 
-
-.movie_director, .movie_writers, .movie_stars{
+.movie_director,
+.movie_writers,
+.movie_stars {
   margin: 0 0 1.5rem;
   font-weight: 500;
 }
 
-
-.movie_director span, .movie_writers span, .movie_stars span{
+.movie_director span,
+.movie_writers span,
+.movie_stars span {
   color: #be123c;
 }
 
@@ -215,23 +217,23 @@ p.movie_overview {
   gap: 2rem;
 }
 
-.nominations p{
+.nominations p {
   padding: 0.4rem 1rem;
   font-weight: 600;
 }
 
-.movie_65{
-font-weight: 500;
+.movie_65 {
+  font-weight: 500;
   background-color: #be123c;
   color: #ffffff;
   border-radius: 0.4rem;
 }
 
-.FaAngleDown{
+.FaAngleDown {
   margin-right: 1rem;
 }
 
-.movie_detail-right{
+.movie_detail-right {
   margin-bottom: 1.5rem;
 }
 
@@ -243,7 +245,7 @@ font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
-.movie_btn{
+.movie_btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,15 +256,11 @@ font-weight: 500;
   border-radius: 0.4rem;
   font-weight: 600;
   width: 100%;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.btn-2{
-background: rgba(190, 18, 60, 0.1);
-border: 1px solid #be123c;
-color: #000000;
+.btn-2 {
+  background: rgba(190, 18, 60, 0.1);
+  border: 1px solid #be123c;
+  color: #000000;
 }
-
-
-
-

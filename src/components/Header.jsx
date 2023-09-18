@@ -14,7 +14,7 @@ import { BiChevronRight } from "react-icons/bi";
 import Card from "../UI/Card";
 
 const Header = () => {
-  const [movies, setMovies] = useState([]);
+  const [ movies, setMovies ] = useState([]);
   const getMovie = () => {
     fetch(
       "https://api.themoviedb.org/3/movie/top_rated?api_key=812483ddbe4ac24230b9260aa76f4a30"
@@ -135,15 +135,13 @@ const Header = () => {
             <BiChevronRight />
           </Link>
         </div>
-    
-        <div className="cards">
 
-        <div className="poster_wrapper container">
-          {movies.map((movie) => (
-            <Card movie={movie} />
-          ))}
+        <div className="cards">
+          <div className="poster_wrapper container">
+            {movies.map((movie, index) => (
+              <Card movie={movie} key={index}/>
+            ))}
           </div>
-      
         </div>
       </section>
     </>

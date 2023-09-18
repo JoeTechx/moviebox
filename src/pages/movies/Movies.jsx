@@ -16,8 +16,8 @@ import { IoTicketSharp } from "react-icons/io5";
 import "./Movies.css";
 
 const Movies = () => {
-  const { movie, setMovie } = useState([]);
-  const id = useParams();
+  const [ movie, setMovie ] = useState([]);
+  const { id } = useParams();
 
   const getData = () => {
     fetch(
@@ -25,8 +25,8 @@ const Movies = () => {
     )
       .then((res) => res.json())
       .then((data) => setMovie(data));
+    };
     console.log(movie);
-  };
   console.log({ id });
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const Movies = () => {
         <div className="top_container">
           <div className="trailer_video">
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`}
               alt="Trailer"
               className="trailer_img"
             />
@@ -98,7 +98,7 @@ const Movies = () => {
                 <p className="PG">PG-13</p>
                 <BsDot />
                 <p className="released_runtime" data-testid="movie-runtime">
-                  {movie?.runtime + " mins"}
+                  {movie?.runtime}
                 </p>
               </div>
               <div className="genre_btn">
@@ -115,7 +115,7 @@ const Movies = () => {
               <BiSolidStar />
               <span>{movie?.vote_average}</span>
               <p>|</p>
-              <p>350K</p>
+              <p>{movie?.vote_count}k</p>
             </div>
           </div>
           <div className="movie_detail">

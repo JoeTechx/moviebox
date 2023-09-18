@@ -28,7 +28,7 @@ input::placeholder {
   color: #ffffff;
 }
 
-.search_icon{
+.search_icon {
   color: #ffffff;
   font-size: 1.37rem;
   margin-left: -2rem;
@@ -39,7 +39,7 @@ input::placeholder {
   align-items: center;
   gap: 0.7rem;
   color: #ffffff;
-  
+
   margin-right: -7rem;
 }
 
@@ -125,64 +125,61 @@ input::placeholder {
   transform: rotate(90deg);
 }
 
-
 .card {
-    /* border: 1px solid #dbdbdb; */
-    padding: 0.8rem;
-    border-radius: 1rem;
-    transition: var(--transition);
-  }
-
-
-  .feature__movies-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 3rem 0;
-  }
-
-  .see_more{
-    color: #be123c;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-  }
-
-  .poster_wrapper{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
-  }
-
-  .movie_dt{
-    display: flex;
-    flex-direction: column;
-  }
-
-a.movie_title{
-    font-weight: 700
+  /* border: 1px solid #dbdbdb; */
+  padding: 0.8rem;
+  border-radius: 1rem;
+  transition: var(--transition);
 }
 
-.imdb-and-to{
+.feature__movies-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.see_more {
+  color: #be123c;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.poster_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.movie_dt {
+  display: flex;
+  flex-direction: column;
+}
+
+a.movie_title {
+  font-weight: 700;
+}
+
+.imdb-and-to {
   display: flex;
   justify-content: space-between;
 }
-  .feat_imdb small,
+.feat_imdb small,
 .feat_tomato small {
   color: #000000;
-  
-  color:#656565
+
+  color: #656565;
 }
 
-.movie_genre{
-    display: flex;
-    gap: 0.6rem;
-    color:#656565
+.movie_genre {
+  display: flex;
+  gap: 0.6rem;
+  color: #656565;
 }
 
-
-footer{
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -190,7 +187,7 @@ footer{
   margin: 7rem auto 3rem;
 }
 
-.social_poster{
+.social_poster {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,7 +196,7 @@ footer{
   margin: 0 0 1.5rem;
 }
 
-.poster_link{
+.poster_link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,7 +206,7 @@ footer{
   color: #383838;
   font-weight: 700;
 }
-.copyright{
+.copyright {
   font-size: 0.8rem;
   color: #949494;
   font-weight: 600;
